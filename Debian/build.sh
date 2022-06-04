@@ -51,7 +51,8 @@ tar xzf /tarball.tar.gz --strip 1
 
 tmpdir_inst=$(mktemp -d)
 install -d -m 0755 "$tmpdir_inst/usr/share/doc/$appname"
-install -m 644 copyright "$tmpdir_inst/usr/share/doc/$appname"
+[ -f copyright ] && install -m 644 copyright "$tmpdir_inst/usr/share/doc/$appname"
+[ -f LICENSE ] && install -m 644 LICENSE "$tmpdir_inst/usr/share/doc/$appname"
 make install DESTDIR="$tmpdir_inst" INSTALL=/usr/bin/install
 gzip -9 packaging/debian/changelog.Debian
 install -m 644 packaging/debian/changelog.Debian.gz "$tmpdir_inst/usr/share/doc/$appname"
