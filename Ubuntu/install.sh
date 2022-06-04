@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # -*- coding: utf-8 -*-
 #
@@ -20,6 +20,9 @@
 # along with FAIRSHELL.  If not, see <http://www.gnu.org/licenses/>.
 
 set -e
+
+[ "$http_proxy" == "" ] && unset http_proxy
+[ "$https_proxy" == "" ] && unset https_proxy
 
 # soft. install
 apt update

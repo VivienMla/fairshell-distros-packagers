@@ -5,6 +5,9 @@ packaging process _does probably not_ respect each distribution, contributions a
 # Preparation
 Ensure the Docker runtime is installed, and run 'make' in this directory to rebuild all.
 
+HTTP/HTTPS proxies can be specified by defining the `http_proxy` and `https_proxy` environment variables
+before running `make`.
+
 This creates Docker images named as `fairshell-<distribution>-builder` (like `fairshell-fedora-builder`).
 
 # Usage
